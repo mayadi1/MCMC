@@ -7,10 +7,10 @@
 //
 
 #import "ViewController.h"
-
+#import "MagicalCreatures.h"
+#import "CreatureViewController.h"
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
 @property NSMutableArray *creatures;
 @end
 
@@ -18,11 +18,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.creatures =@[@"one",@"two", @"three"].mutableCopy;
+    
+    
+    MagicalCreatures *creatures1 = [[MagicalCreatures alloc]initWithName:@"one"];
+    
+    MagicalCreatures *creatures2 = [[MagicalCreatures alloc]initWithName:@"three"];
+
+    MagicalCreatures *creatures3 = [[MagicalCreatures alloc]initWithName:@"two"];
+    
+    self.creatures = @[creatures1,creatures2,creatures3].mutableCopy;
+    
+    
+    
     
     
 
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self.tableView reloadData];
+    
+}
+
 
 - (IBAction)add:(UIBarButtonItem *)sender {
     UIAlertController *alertContoller = [UIAlertController alertControllerWithTitle:@"Enter text" message:nil preferredStyle:UIAlertControllerStyleAlert];
@@ -37,8 +54,10 @@
         //UITextField *textField2 = alertContoller.textFields.lastObject;
         
         
+        MagicalCreatures *creature = [[MagicalCreatures alloc]initWithName:textField1.text];
         
-        [self.creatures addObject:textField1.text];
+        
+        [self.creatures addObject:creature];
         [self.tableView reloadData];
         
     }];
@@ -53,7 +72,12 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"CellID"];
-    cell.textLabel.text = self.creatures[indexPath.row];
+    
+    MagicalCreatures *creature = self.creatures[indexPath.row];
+    
+    
+    cell.textLabel.text = creature.name;
+    
     
     return cell;
 }
@@ -63,6 +87,17 @@
     
     
     return self.creatures.count;
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    CreatureViewController *dvc = segue.destinationViewController;
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+    dvc.creature = self.creatures[indexPath.row];
+    
+    
+    
     
 }
 
