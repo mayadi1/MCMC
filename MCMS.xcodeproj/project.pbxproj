@@ -13,6 +13,7 @@
 		186D9DDA1CFF6F0E002364BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186D9DD81CFF6F0E002364BA /* Main.storyboard */; };
 		186D9DDC1CFF6F0E002364BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186D9DDB1CFF6F0E002364BA /* Assets.xcassets */; };
 		186D9DDF1CFF6F0E002364BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186D9DDD1CFF6F0E002364BA /* LaunchScreen.storyboard */; };
+		186D9DE81CFF6F2F002364BA /* MagicalCreatures.m in Sources */ = {isa = PBXBuildFile; fileRef = 186D9DE71CFF6F2F002364BA /* MagicalCreatures.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		186D9DDB1CFF6F0E002364BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		186D9DDE1CFF6F0E002364BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		186D9DE01CFF6F0E002364BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		186D9DE61CFF6F2F002364BA /* MagicalCreatures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalCreatures.h; sourceTree = "<group>"; };
+		186D9DE71CFF6F2F002364BA /* MagicalCreatures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalCreatures.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				186D9DD51CFF6F0E002364BA /* ViewController.h */,
 				186D9DD61CFF6F0E002364BA /* ViewController.m */,
 				186D9DD81CFF6F0E002364BA /* Main.storyboard */,
+				186D9DE61CFF6F2F002364BA /* MagicalCreatures.h */,
+				186D9DE71CFF6F2F002364BA /* MagicalCreatures.m */,
 				186D9DDB1CFF6F0E002364BA /* Assets.xcassets */,
 				186D9DDD1CFF6F0E002364BA /* LaunchScreen.storyboard */,
 				186D9DE01CFF6F0E002364BA /* Info.plist */,
@@ -150,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				186D9DD71CFF6F0E002364BA /* ViewController.m in Sources */,
+				186D9DE81CFF6F2F002364BA /* MagicalCreatures.m in Sources */,
 				186D9DD41CFF6F0E002364BA /* AppDelegate.m in Sources */,
 				186D9DD11CFF6F0E002364BA /* main.m in Sources */,
 			);
